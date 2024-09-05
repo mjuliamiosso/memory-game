@@ -2,21 +2,24 @@ const board = document.querySelector('.board')
 const card = document.querySelectorAll('.card')
 let hasFlippedCard = false
 let firstCard, secondCard
+let lockBoard = false
 
 //Virar a carta
 function flipCard(){
+    if(lockBoard) return
     this.classList.toggle('flip')
 
     if(!hasFlippedCard){
         //primeiro clique
         hasFlippedCard = true
         firstCard = this
+
+        return
     } else{
         //segundo clique
         hasFlippedCard = false
         secondCard = this
-        console.log(firstCard.dataset.id)
-        console.log(secondCard.dataset.id)
+
         checkMatch()
     }
 }
@@ -35,16 +38,23 @@ shuffleCards()
 //Checar as cartas
 function checkMatch(){
     if(firstCard.dataset.id === secondCard.dataset.id){
-        console.log('matched')
-        firstCard.removeEventListener('click', flipCard)
-        secondCard.removeEventListener('click', flipCard)
+        disableCards()
     } else {
-        console.log('wrong')
-        setTimeout(unflipCard, 650)
+        unflipCard()
     }
 }
 
+function disableCards(){
+    firstCard.removeEventListener('click', flipCard)
+    secondCard.removeEventListener('click', flipCard)
+}
+
 function unflipCard(){
-    firstCard.classList.remove('flip')
-    secondCard.classList.remove('flip')
+    lockBoard = true
+    setTimeout(() => {
+        firstCard.classList.remove('flip')
+        secondCard.classList.remove('flip')
+        
+        lockBoard = false
+    }, 650)
 }
