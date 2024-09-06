@@ -4,6 +4,11 @@ let hasFlippedCard = false
 let firstCard, secondCard
 let lockBoard = false
 
+//Novo jogo
+function newGame(){
+    location.reload()
+}
+
 //Virar a carta
 function flipCard(){
     if(lockBoard) return
