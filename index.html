@@ -11,88 +11,89 @@
     <header class="container">
         <h1>Jogo da Memória</h1>
         <div>
-            <p>Jogadas: <span class="moves"></span></p>
             <button id="modal">Mudar Tema</button>
+            <p>Jogadas: <span class="moves"></span></p>
             <button onclick="newGame()">Novo Jogo</button>
         </div>
         <dialog>
-            <button onclick="closeModal()">Legend of Zelda: Breath of the Wild</button>
-            <button onclick="closeModal()">Stardew Valley</button>
-            <button onclick="closeModal()">Monster Hunter World: Iceborne</button>
+            <button id="sv-theme" onclick="changeTheme(this.id)">Stardew Valley</button>
+            <button id="botw-theme" onclick="changeTheme(this.id)">Legend of Zelda: Breath of the Wild</button>
+            <button id="mhw-theme" onclick="changeTheme(this.id)">Monster Hunter World: Iceborne</button>
+            <button onclick="closeModal()">Fechar</button>
         </dialog>
     </header>
     <main class="board">
         <div class= "card" data-id='card-1'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-1.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-1.png'>
         </div>
         <div class= "card" data-id='card-1'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-1.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-1.png'>
         </div>
         <div class= "card" data-id='card-2'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-2.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-2.png'>
         </div>
         <div class= "card" data-id='card-2'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-2.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-2.png'>
         </div>
         <div class= "card" data-id='card-3'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-3.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-3.png'>
         </div>
         <div class= "card" data-id='card-3'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-3.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-3.png'>
         </div>
         <div class= "card" data-id='card-4'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-4.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-4.png'>
         </div>
         <div class= "card" data-id='card-4'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-4.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-4.png'>
         </div>
         <div class= "card" data-id='card-5'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-5.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-5.png'>
         </div>
         <div class= "card" data-id='card-5'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-5.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-5.png'>
         </div>
         <div class= "card" data-id='card-6'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-6.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-6.png'>
         </div>
         <div class= "card" data-id='card-6'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-6.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-6.png'>
         </div>
         <div class= "card" data-id='card-7'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-7.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-7.png'>
         </div>
         <div class= "card" data-id='card-7'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-7.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-7.png'>
         </div>
         <div class= "card" data-id='card-8'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-8.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-8.png'>
         </div>
         <div class= "card" data-id='card-8'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-8.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-8.png'>
         </div>
         <div class= "card" data-id='card-9'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-9.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-9.png'>
         </div>
         <div class= "card" data-id='card-9'>
-            <img class= "back" src="./img/zelda-theme/cover.png" />
-            <img class= "front" src= './img/zelda-theme/card-9.png'>
+            <img class= "back" src="./img/botw-theme/cover.png" />
+            <img class= "front" src= './img/botw-theme/card-9.png'>
         </div>
     </main>
     <script src="./js/script.js"></script>

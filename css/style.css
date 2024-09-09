@@ -56,6 +56,10 @@ header button:hover{
     transition: all .3s ease-in-out;
 }
 
+header div p{
+    text-decoration: dashed;
+}
+
 /* Cartas */
 .board{
     margin-left: auto;
@@ -81,7 +85,7 @@ header button:hover{
 .card img{
     width: 100%;
     height: 100%;
-    border: 3px solid #FFB43A;
+    border: 3px solid #3b393f;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -118,11 +122,19 @@ dialog {
     border-radius: 7px;
     box-shadow: 0 0 1em rgb(0, 0, 0);
     width: 400px;
-    padding: 100px 40px;
+    padding: 80px 40px 30px;
     background-color: #1e1e1f;
     margin: auto;
 }
 
 dialog button{
     margin-bottom: 20px;
+}
+
+dialog button:last-child{
+    background-color: #1e1e1f;
+    border: 2px solid #d9d9d9;
+    color: #d9d9d9;
+    margin-top: 50px;
+    box-shadow: 0 0 0;
 }
