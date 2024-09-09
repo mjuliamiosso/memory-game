@@ -1,8 +1,10 @@
 const board = document.querySelector('.board')
 const card = document.querySelectorAll('.card')
+const moves = document.querySelector('.moves')
 let hasFlippedCard = false
 let firstCard, secondCard
 let lockBoard = false
+let movesCounter = 0
 
 //Novo jogo
 function newGame(){
@@ -28,6 +30,8 @@ function flipCard(){
         secondCard = this
 
         checkMatch()
+        movesCounter += 1
+        moves.innerHTML = movesCounter
     }
 }
 
