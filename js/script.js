@@ -1,6 +1,7 @@
 const board = document.querySelector('.board')
 const card = document.querySelectorAll('.card')
 const moves = document.querySelector('.moves')
+const themes = document.querySelector('#modal')
 let hasFlippedCard = false
 let firstCard, secondCard
 let lockBoard = false
@@ -68,4 +69,16 @@ function unflipCard(){
         
         lockBoard = false
     }, 650)
+}
+
+//Modal
+const modal = document.querySelector('dialog')
+const buttonTheme = document.querySelectorAll('.modal-close')
+
+themes.onclick = function (){
+    modal.showModal()
+}
+
+function closeModal() {
+    modal.close()
 }

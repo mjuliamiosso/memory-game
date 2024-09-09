@@ -12,8 +12,14 @@
         <h1>Jogo da Memória</h1>
         <div>
             <p>Jogadas: <span class="moves"></span></p>
+            <button id="modal">Mudar Tema</button>
             <button onclick="newGame()">Novo Jogo</button>
         </div>
+        <dialog>
+            <button onclick="closeModal()">Legend of Zelda: Breath of the Wild</button>
+            <button onclick="closeModal()">Stardew Valley</button>
+            <button onclick="closeModal()">Monster Hunter World: Iceborne</button>
+        </dialog>
     </header>
     <main class="board">
         <div class= "card" data-id='card-1'>
