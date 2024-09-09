@@ -18,10 +18,12 @@ function flipCard(){
         //primeiro clique
         hasFlippedCard = true
         firstCard = this
+        firstCard.removeEventListener('click', flipCard)
 
         return
     } else{
         //segundo clique
+        firstCard.addEventListener('click', flipCard)
         hasFlippedCard = false
         secondCard = this
 

@@ -90,6 +90,10 @@ header button:active, .card:active{
     cursor: pointer;
 }
 
+.card:hover{
+    transform: scale(1.05);
+}
+
 .back, .front{
     position: absolute;
     cursor: pointer;
