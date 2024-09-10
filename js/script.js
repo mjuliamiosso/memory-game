@@ -17,7 +17,20 @@ let movesCounter = 0
 
 //Novo jogo
 function newGame(){
-    location.reload()
+    //remover o flip
+    const cards = document.querySelectorAll('.card.flip')
+    cards.forEach(card => {
+        card.classList.remove('flip')
+    })
+
+    //adicionar eventListener novamente
+    cards.forEach(card => {
+        card.addEventListener('click', flipCard)
+    })
+    
+    movesCounter = 0
+    moves.innerHTML = movesCounter
+    shuffleCards()
 }
 
 //Virar a carta
@@ -96,6 +109,7 @@ svTheme.addEventListener('click', closeModal)
 botwTheme.addEventListener('click', closeModal)
 mhwTheme.addEventListener('click', closeModal)
 
+//Mudar tema
 function changeTheme(theme){
     const nowTheme = theme
     
@@ -108,12 +122,15 @@ function changeTheme(theme){
         switch(true){
             case frontCard[i].src.includes('botw-theme'):
                 frontCard[i].src = nowSrc.replace('botw-theme', nowTheme)
+                newGame()
                 break
             case frontCard[i].src.includes('sv-theme'):
                 frontCard[i].src = nowSrc.replace('sv-theme', nowTheme)
+                newGame()
                 break
             case frontCard[i].src.includes('mhw-theme'):
                 frontCard[i].src = nowSrc.replace('mhw-theme', nowTheme)
+                newGame()
                 break
         }
     }
