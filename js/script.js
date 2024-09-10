@@ -7,6 +7,7 @@ const moves = document.querySelector('.moves')
 const svTheme = document.querySelector("#sv-theme")
 const botwTheme = document.querySelector("#botw-theme")
 const mhwTheme = document.querySelector("#mhw-theme")
+const marioTheme = document.querySelector("#mario-theme")
 
 let hasFlippedCard = false
 let firstCard, secondCard
@@ -123,6 +124,7 @@ function closeThemeModal() {
 svTheme.addEventListener('click', closeThemeModal)
 botwTheme.addEventListener('click', closeThemeModal)
 mhwTheme.addEventListener('click', closeThemeModal)
+marioTheme.addEventListener('click', closeThemeModal)
 
 //Mudar tema
 function changeTheme(theme){
