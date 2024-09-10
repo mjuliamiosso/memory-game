@@ -147,6 +147,10 @@ function changeTheme(theme){
                 frontCard[i].src = nowSrc.replace('mhw-theme', nowTheme)
                 newGame()
                 break
+            case frontCard[i].src.includes('mario-theme'):
+                frontCard[i].src = nowSrc.replace('mario-theme', nowTheme)
+                newGame()
+                break
         }
     }
 }
