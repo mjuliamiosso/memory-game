@@ -85,7 +85,6 @@ header div p{
 .card img{
     width: 100%;
     height: 100%;
-    border: 3px solid #3b393f;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -114,7 +113,7 @@ header div p{
 
 /* Modal */
 dialog::backdrop{
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 dialog {
@@ -122,7 +121,7 @@ dialog {
     border-radius: 7px;
     box-shadow: 0 0 1em rgb(0, 0, 0);
     width: 400px;
-    padding: 80px 40px 30px;
+    padding: 50px 50px 25px;
     background-color: #1e1e1f;
     margin: auto;
 }
@@ -135,6 +134,19 @@ dialog button:last-child{
     background-color: #1e1e1f;
     border: 2px solid #d9d9d9;
     color: #d9d9d9;
-    margin-top: 50px;
+    margin-top: 35px;
     box-shadow: 0 0 0;
+}
+
+dialog p{
+    margin-bottom: 20px;
+}
+
+dialog img{
+    width: 200px;
+    border-radius: 5px;
+}
+
+#congrats p:first-child{
+    font-size: 1.75rem;
 }

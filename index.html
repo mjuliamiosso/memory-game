@@ -11,15 +11,22 @@
     <header class="container">
         <h1>Jogo da Memória</h1>
         <div>
-            <button id="modal">Mudar Tema</button>
+            <button class="modalTheme">Mudar Tema</button>
             <p>Jogadas: <span class="moves"></span></p>
             <button onclick="newGame()">Novo Jogo</button>
         </div>
-        <dialog>
+        <dialog id="changeTheme">
             <button id="sv-theme" onclick="changeTheme(this.id)">Stardew Valley</button>
             <button id="botw-theme" onclick="changeTheme(this.id)">Legend of Zelda: Breath of the Wild</button>
             <button id="mhw-theme" onclick="changeTheme(this.id)">Monster Hunter World: Iceborne</button>
-            <button onclick="closeModal()">Fechar</button>
+            <button onclick="closeThemeModal()">Fechar</button>
+        </dialog>
+        <dialog id="congrats">
+            <p>Parabéns!</p>
+            <img src="./img/congrats.webp" alt="">
+            <p>Jogadas: <span class="final-moves"></span></p>
+            <button onclick="newGame()">Novo Jogo</button> <br>
+            <button onclick="closeCongratsModal()">Fechar</button>
         </dialog>
     </header>
     <main class="board">

@@ -3,9 +3,7 @@ const card = document.querySelectorAll('.card')
 const backCard = document.querySelectorAll('.back')
 const frontCard = document.querySelectorAll('.front')
 const moves = document.querySelector('.moves')
-const themes = document.querySelector('#modal')
-const modal = document.querySelector('dialog')
-const buttonTheme = document.querySelector('.modal-close')
+
 const svTheme = document.querySelector("#sv-theme")
 const botwTheme = document.querySelector("#botw-theme")
 const mhwTheme = document.querySelector("#mhw-theme")
@@ -31,6 +29,7 @@ function newGame(){
     movesCounter = 0
     moves.innerHTML = movesCounter
     shuffleCards()
+    closeCongratsModal()
 }
 
 //Virar a carta
@@ -43,7 +42,10 @@ function flipCard(){
         hasFlippedCard = true
         firstCard = this
         firstCard.removeEventListener('click', flipCard)
-
+        
+        //contador de jogadas
+        movesCounter += 1
+        moves.innerHTML = movesCounter
         return
     } else{
         //segundo clique
@@ -52,10 +54,9 @@ function flipCard(){
         secondCard = this
 
         checkMatch()
+        allFlipped()
 
-        //contador de jogadas
-        movesCounter += 1
-        moves.innerHTML = movesCounter
+        
     }
 }
 
@@ -79,11 +80,13 @@ function checkMatch(){
     }
 }
 
+//desativar as cartas que deram match
 function disableCards(){
     firstCard.removeEventListener('click', flipCard)
     secondCard.removeEventListener('click', flipCard)
 }
 
+//remover a classe flip caso nao derem match
 function unflipCard(){
     lockBoard = true
     setTimeout(() => {
@@ -94,20 +97,32 @@ function unflipCard(){
     }, 650)
 }
 
-//Modal
-themes.onclick = function (){
-    modal.showModal()
+//aviso de parabens quando terminar o jogo
+function allFlipped(){
+    const allFlip = Array.from(card).every(card => card.classList.contains('flip'))
+
+    if(allFlip){
+        setTimeout(() =>{
+            showCongrats()
+        },1000)
+    }
 }
 
-function closeModal() {
-    modal.close()
+//Modal para trocar tema
+const modalChangeTheme = document.querySelector('#changeTheme')
+
+const theme = document.querySelector('.modalTheme')
+theme.onclick = function (){
+    modalChangeTheme.showModal()
 }
 
-console.log(frontCard[3])
+function closeThemeModal() {
+    modalChangeTheme.close()
+}
 
-svTheme.addEventListener('click', closeModal)
-botwTheme.addEventListener('click', closeModal)
-mhwTheme.addEventListener('click', closeModal)
+svTheme.addEventListener('click', closeThemeModal)
+botwTheme.addEventListener('click', closeThemeModal)
+mhwTheme.addEventListener('click', closeThemeModal)
 
 //Mudar tema
 function changeTheme(theme){
@@ -134,4 +149,17 @@ function changeTheme(theme){
                 break
         }
     }
+}
+
+//modal de parabens
+const modalCongrats = document.querySelector('#congrats')
+
+function showCongrats(){
+    const finalMoves = document.querySelector('.final-moves')
+    finalMoves.innerHTML = movesCounter
+    modalCongrats.showModal()
+}
+
+function closeCongratsModal() {
+    modalCongrats.close()
 }
